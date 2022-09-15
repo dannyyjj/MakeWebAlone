@@ -26,12 +26,12 @@ public class HelloControllerTest {
 
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(hello));
+                .andExpect(content().string("Danny"));
     }
 
     @Test
     public void helloDto가_리턴된다() throws Exception {
-        String name = "hello";
+        String name = "danny";
         int amount = 1000;
 
         mvc.perform(
