@@ -9,7 +9,7 @@ public class HelloResponseDtoTest {
     @Test
     public void 롬복_기능_테스트() {
         //given
-        String name = "test";
+        String name = "danny";
         int amount = 1000;
 
         //when

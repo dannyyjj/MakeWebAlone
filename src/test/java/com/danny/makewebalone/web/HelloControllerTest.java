@@ -26,7 +26,7 @@ public class HelloControllerTest {
 
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Danny"));
+                .andExpect(content().string(hello));
     }
 
     @Test
