@@ -39,4 +39,9 @@ public class IndexController {
         model.addAttribute("post", dto);
         return "posts-update";
     }
+
+    @GetMapping("/joinSelf")
+    public String join(){
+        System.out.println("Controller");
+        return "join";}
 }
