@@ -40,8 +40,4 @@ public class IndexController {
         return "posts-update";
     }
 
-    @GetMapping("/joinSelf")
-    public String join(){
-        System.out.println("Controller");
-        return "join";}
 }
