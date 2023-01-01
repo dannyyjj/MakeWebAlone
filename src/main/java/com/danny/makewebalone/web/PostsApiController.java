@@ -1,11 +1,13 @@
 package com.danny.makewebalone.web;
 
+import com.danny.makewebalone.photo.biz.FileService;
 import com.danny.makewebalone.service.posts.PostsService;
 import com.danny.makewebalone.web.dto.PostsResponseDto;
 import com.danny.makewebalone.web.dto.PostsSaveRequestDto;
 import com.danny.makewebalone.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @RestController

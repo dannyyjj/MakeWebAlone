@@ -1,5 +1,6 @@
 package com.danny.makewebalone.service.posts;
 
+import com.danny.makewebalone.photo.biz.FileService;
 import com.danny.makewebalone.web.domain.posts.Posts;
 import com.danny.makewebalone.web.domain.posts.PostsRepository;
 import com.danny.makewebalone.web.dto.PostsListResponseDto;
@@ -7,12 +8,15 @@ import com.danny.makewebalone.web.dto.PostsResponseDto;
 import com.danny.makewebalone.web.dto.PostsSaveRequestDto;
 import com.danny.makewebalone.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class PostsService {
