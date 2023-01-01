@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<form>
+    <h1>회원가입</h1>
+    <div> email : <input type="email" id="joinEmail"></div>
+    <div> password : <input type="password" id="joinPassword"></div>
+    <button type="submit" id="signButton">회원가입</button>
+    <button>로그인</button>
+</form>
+
+<form>
+    <h1>로그인</h1>
+    <div> email : <input type="email" id="loginEmail"></div>
+    <div> password : <input type="password" id="loginPassword"></div>
+    <button type="submit" id="loginButton">로그인</button>
+    <button>회원가입</button>
+</form>
+
+<script type="module">
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyB6hAXtxgnzVAmXyQX81qbGmrZyi-k2T6c",
+        authDomain: "easylogin-85d04.firebaseapp.com",
+        projectId: "easylogin-85d04",
+        storageBucket: "easylogin-85d04.appspot.com",
+        messagingSenderId: "351071763163",
+        appId: "1:351071763163:web:25dacc2d8542395931aafe",
+        measurementId: "G-R7J9ZDFPD2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log("auth===>",auth); // 인증 권한
+
+    document.getElementById('signButton').addEventListener('click', (event) => {
+        event.preventDefault()
+        const joinEmail = document.getElementById('joinEmail').value;
+        const joinPassword = document.getElementById('joinPassword').value;
+
+        createUserWithEmailAndPassword(auth, joinEmail, joinPassword)
+            .then((userCredential) => {
+                // join Seccessed
+                const user = userCredential.user;
+                console.log("userCredential===>", userCredential)
+                console.log("user===>",user)
+            })
+            .catch((error) => {
+                // Failed
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("회원가입 실패")
+                console.log("errorCode===>",errorCode)
+                console.log("errorMessage",errorMessage)
+            });
+    });
+
+    document.getElementById('loginButton').addEventListener('click', (event) => {
+        event.preventDefault()
+        const loginEmail = document.getElementById('loginEmail').value;
+        const loginPassword = document.getElementById('loginPassword').value;
+
+        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+        .then((userCredential) => {
+            // login Seccessed
+            const user = userCredential.user;
+            console.log("userCredential===>",userCredential)
+            console.log("user===>",user)
+        })
+        .catch((error) => {
+            // Failed
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log('로그인 실패')
+            console.log('errorCode===>',errorCode)
+            console.log('errorMessage===>',errorMessage)
+        });
+    });
+</script>
+</body>
+</html>

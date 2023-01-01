@@ -31,3 +31,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userService(customOAuth2UserService);
     }
 }
+// .userService(customOAuth2UserService).and().successHandler(new successHandler());
