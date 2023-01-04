@@ -36,6 +36,7 @@ public class PostsApiController {
 
     @DeleteMapping("/api/v1/posts/{id}")
     public Long delete(@PathVariable Long id, @LoginUser SessionUser user) {
+        // 삭제시 검증루틴 추가할 것
         log.error("user===>{}",user);
         postsService.delete(id);
         return id;
