@@ -39,7 +39,6 @@ public class PostsRepositoryTest {
     public void testConnection() throws ClassNotFoundException {
         Class.forName(DRIVER);
         try (Connection con = DriverManager.getConnection(URL, USER, PW)) {
-            log.error("con===>{}", con);
         } catch (Exception e) {
             e.printStackTrace();
         }

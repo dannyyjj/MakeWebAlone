@@ -1,14 +1,18 @@
 package com.danny.makewebalone.web;
 
+import com.danny.makewebalone.config.auth.LoginUser;
+import com.danny.makewebalone.config.auth.dto.SessionUser;
 import com.danny.makewebalone.photo.biz.FileService;
 import com.danny.makewebalone.service.posts.PostsService;
 import com.danny.makewebalone.web.dto.PostsResponseDto;
 import com.danny.makewebalone.web.dto.PostsSaveRequestDto;
 import com.danny.makewebalone.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
@@ -31,7 +35,8 @@ public class PostsApiController {
     }
 
     @DeleteMapping("/api/v1/posts/{id}")
-    public Long delete(@PathVariable Long id) {
+    public Long delete(@PathVariable Long id, @LoginUser SessionUser user) {
+        log.error("user===>{}",user);
         postsService.delete(id);
         return id;
     }
