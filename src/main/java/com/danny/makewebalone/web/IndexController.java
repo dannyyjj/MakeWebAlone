@@ -24,7 +24,7 @@ public class IndexController {
         model.addAttribute("posts", postsService.findAllDesc());
         // SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user!=null){
-            model.addAttribute("userName2", user.getName());
+            model.addAttribute("userName", user.getName());
             model.addAttribute("ficture", user.getPicture());
         }
 
@@ -33,7 +33,7 @@ public class IndexController {
     @GetMapping("/posts/save")
     public String postsSava(Model model, @LoginUser SessionUser user){
         if(user!=null){
-            model.addAttribute("userName2", user.getName());
+            model.addAttribute("userName", user.getName());
         }
         return "posts-save";
     }

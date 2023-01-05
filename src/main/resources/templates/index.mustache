@@ -3,15 +3,15 @@
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6">
-            {{#userName2}}
-                <span id="user">{{userName2}}님 환영합니다.</span>
+            {{#userName}}
+                <span id="user">{{userName}}님 환영합니다.</span>
                 <div class="box" style="background: #BDBDBD;">
                     <img class="profile" src="{{ficture}}">
                 </div>
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                 <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-            {{/userName2}}
-            {{^userName2}}
+            {{/userName}}
+            {{^userName}}
                 <!--<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">구글 로그인</a>
                 <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">네이버 로그인</a>
                 <a href="/oauth2/authorization/kakao" class="btn btn-warning active" role="button">카카오 로그인</a>-->
@@ -26,7 +26,7 @@
                         <a href="/oauth2/authorization/google" role="button"><img src="https://image.yeoboya.com/imgs/new_wedding/mobile/new_login/ico_sc_gg.png" alt="구글"></a>
                     </div>
                 </div>
-            {{/userName2}}
+            {{/userName}}
         </div>
 
 
@@ -40,7 +40,7 @@
             <th>게시글번호</th>
             <th>제목</th>
             <th>작성자</th>
-            <th>최종수정일</th>
+            <th>작성일</th>
         </tr>
         </thead>
         <tbody id="tbody">
