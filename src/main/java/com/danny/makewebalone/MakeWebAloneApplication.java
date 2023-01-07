@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 // https://github.com/jojoldu/freelec-springboot2-webservice
 // https://do5do.tistory.com/12?category=1047109
 
-@EnableJpaAuditing
+// @EnableJpaAuditing - p.221 HelloController Test
 @SpringBootApplication
 public class MakeWebAloneApplication {
 
