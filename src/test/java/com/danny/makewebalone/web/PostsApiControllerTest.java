@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PostsApiControllerTest {
+public class  PostsApiControllerTest {
 
     @LocalServerPort
     private int port;
@@ -65,7 +65,7 @@ public class PostsApiControllerTest {
     @WithMockUser(roles="USER")
     public void Posts_등록된다() throws Exception {
         //given
-        String title = "title";
+        String title = "test";
         String content = "content";
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
                 .title(title)

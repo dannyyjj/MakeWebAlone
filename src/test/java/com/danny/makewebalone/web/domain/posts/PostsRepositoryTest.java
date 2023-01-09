@@ -25,10 +25,10 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-//    @After
-//    public void cleanup() {
-//        postsRepository.deleteAll();
-//    }
+    @After
+    public void cleanup() {
+        postsRepository.deleteAll();
+    }
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/danny";
