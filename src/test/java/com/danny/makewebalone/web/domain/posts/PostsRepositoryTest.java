@@ -25,10 +25,10 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After
-    public void cleanup() {
-        postsRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup() {
+//        postsRepository.deleteAll();
+//    }
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/danny";
@@ -47,8 +47,8 @@ public class PostsRepositoryTest {
     @Test
     public void 게시글저장_불러오기() {
         //given
-        String title = "테스트 게시글";
-        String content = "테스트 본문";
+        String title = "test";
+        String content = "content";
 
         postsRepository.save(Posts.builder()
                 .title(title)
