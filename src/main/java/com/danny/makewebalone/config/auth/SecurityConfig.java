@@ -31,4 +31,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userService(customOAuth2UserService);
     }
 }
+// 로그인 후 추가 검증
 // .userService(customOAuth2UserService).and().successHandler(new successHandler());
